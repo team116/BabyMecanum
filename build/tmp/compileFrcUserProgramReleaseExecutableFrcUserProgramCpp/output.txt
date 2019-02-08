@@ -1,0 +1,4 @@
+See file:///C:/Users/mike/Documents/Github/ed2019/BabyMecanum/build/tmp/compileFrcUserProgramReleaseExecutableFrcUserProgramCpp/output.txt for all output for compileFrcUserProgramReleaseExecutableFrcUserProgramCpp.
+compiling Robot.cpp successful.
+
+Finished compileFrcUserProgramReleaseExecutableFrcUserProgramCpp, see full log file:///C:/Users/mike/Documents/Github/ed2019/BabyMecanum/build/tmp/compileFrcUserProgramReleaseExecutableFrcUserProgramCpp/output.txt.
