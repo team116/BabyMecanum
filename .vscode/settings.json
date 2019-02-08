@@ -11,5 +11,8 @@
     ".classpath": true,
     ".project": true
   },
-  "C_Cpp.intelliSenseEngineFallback": "Disabled"
+  "C_Cpp.intelliSenseEngineFallback": "Enabled",
+  "files.associations": {
+    "iostream": "cpp"
+  }
 }
