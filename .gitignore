@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 # Created by https://www.gitignore.io/api/c++,java,linux,macos,gradle,windows,visualstudiocode
 
 ### C++ ###
+=======
+>>>>>>> 6fca6f9e2d118697188053f8ed732fa180643809
 # Prerequisites
 *.d
 
@@ -33,6 +36,7 @@
 *.exe
 *.out
 *.app
+<<<<<<< HEAD
 
 ### Java ###
 # Compiled class file
@@ -134,6 +138,22 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+### Gradle ###
+.gradle
+/build/
+
+# Ignore Gradle GUI config
+gradle-app.setting
+
+# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
+!gradle-wrapper.jar
+
+# Cache of project
+.gradletasknamecache
+
+# # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
+# gradle/wrapper/gradle-wrapper.properties
+
 # # VS Code Specific Java Settings
 .classpath
 .project
@@ -143,4 +163,4 @@ bin/
 
 # End of https://www.gitignore.io/api/c++,java,linux,macos,gradle,windows,visualstudiocode
 =======
->>>>>>> refs/remotes/origin/master
+>>>>>>> 6fca6f9e2d118697188053f8ed732fa180643809
