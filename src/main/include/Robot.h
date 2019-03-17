@@ -15,9 +15,28 @@
 #include <frc/drive/MecanumDrive.h>
 #include <frc/XboxController.h>
 #include <frc/GenericHID.h>
-#include <ctre/phoenix.h>
+#include <ctre/Phoenix.h>
+#include <frc/XboxController.h>
+
 
 class Robot : public frc::TimedRobot {
+  	/** state for tracking whats controlling the drivetrain */
+	enum {
+		GoStraightOff, GoStraightWithPidgeon, GoStraightSameThrottle
+	} goStraight = GoStraightOff;
+
+	/* Some gains for heading servo,
+	 * these were tweaked by using the web-based config (CAN Talon) and
+	 * pressing gamepad button 6 to load them.
+	 */
+	double kPgain = 0.04; /* percent throttle per degree of error */
+	double kDgain = 0.0004; /* percent throttle per angular velocity dps */
+	double kMaxCorrectionRatio = 0.30; /* cap corrective turning throttle to 30 percent of forward throttle */
+	/** holds the current angle to servo to */
+	double targetAngle = 0;
+	/** count loops to print every second or so */
+	int _printLoops = 0;
+
  public:
   void RobotInit() override;
   void RobotPeriodic() override;
@@ -39,15 +58,16 @@ class Robot : public frc::TimedRobot {
   static constexpr int kRearRightChannel  = 4;
 
   static constexpr int kJoystickChannel = 0;
+  
+  PigeonIMU *pidgey;
 
   WPI_TalonSRX *m_FrontLeft  = new WPI_TalonSRX(kFrontLeftChannel);
   WPI_TalonSRX *m_RearLeft   = new WPI_TalonSRX(kRearLeftChannel);
   WPI_TalonSRX *m_FrontRight = new WPI_TalonSRX(kFrontRightChannel);
   WPI_TalonSRX *m_RearRight  = new WPI_TalonSRX(kRearRightChannel);
 
-
   frc::MecanumDrive m_robotDrive{*m_FrontLeft, *m_RearLeft, *m_FrontRight, *m_RearRight};
 
-  frc::Joystick m_stick{kJoystickChannel};
+  frc::XboxController xbox0{kJoystickChannel};
 
 };
